@@ -1,5 +1,3 @@
-
-
 public class MyLinkedList<E> extends MyAbstractList<E> {
 
     private Node<E> head, tail;
@@ -172,8 +170,29 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
         }//while
         return false;
     }//contains 
-
-    /** @Return the element from this list at the specified index
+    /**
+     * overloaded
+     * @param e
+     * @param comps compares counter 
+     * @return true if this list contains the element and counts compares
+     */
+    public boolean contains( int[] count,E e){
+        Node<E> temp = head;
+        int i=0;
+        while(temp.next !=null){
+            i++;
+            if(temp.element.equals(e)){
+                count[0]+=i;
+                return true;
+            }//if
+            temp=temp.next;
+        }//while
+        count[0]+=i;
+        //System.out.println(comps[0]);
+        return false;
+    }//contains ovarload
+    
+    /** @return the element from this list at the specified index
      * @param index */
     public E get(int index){
         if(index>0&&index<size){
