@@ -1,4 +1,5 @@
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -84,16 +85,15 @@ private long compsNotFound;
             Scanner input = new Scanner(f);
             
             while (input.hasNext()){
-                Scanner line = new Scanner(input.nextLine());
+                String rLine=input.nextLine();
+                rLine=rLine.replaceAll("[^A-Za-z ]", "");
+                rLine=rLine.toLowerCase();
+                Scanner line = new Scanner(rLine);
                 
         while (line.hasNext()) {
             String word = line.next();          
-                  word = word.replaceAll("[^'-z]","");
-                  word=word.toLowerCase();
                   count[0]=0;
-                 
-                   
-                    //System.out.println(": "+word+":");
+                  //System.out.println(": "+word+":");
                   if(!word.isEmpty()){
                   if(word.charAt(0)>96 &&word.charAt(0)<123){
                   if(this.dictionary[word.charAt(0)-97].contains(count,word)){
