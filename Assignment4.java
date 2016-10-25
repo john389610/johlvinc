@@ -58,10 +58,6 @@ private long compsNotFound;
             while (input.hasNext()){
                    String word = input.next();
                   word=word.toLowerCase();
-                if(word.charAt(0)-97== 1){
-                    
-                    
-                }
                   this.dictionary[word.charAt(0)-97].add(word);
             }//while file
             
@@ -97,8 +93,7 @@ private long compsNotFound;
                   if(!word.isEmpty()){
                   if(word.charAt(0)>96 &&word.charAt(0)<123){
                   if(this.dictionary[word.charAt(0)-97].contains(count,word)){
-                   found++;   
-                     
+                   found++;                        
                    compsFound+=count[0];
                   } else {notFound++;compsNotFound+=count[0];}
                   }}
