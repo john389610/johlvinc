@@ -82,7 +82,7 @@ private long compsNotFound;
             
             while (input.hasNext()){
                 String rLine=input.nextLine();
-                rLine=rLine.replaceAll("[^A-Za-z ]", "");
+                rLine=rLine.replaceAll("[^A-Za-z' ]", "");
                 rLine=rLine.toLowerCase();
                 Scanner line = new Scanner(rLine);
                 
